@@ -1,11 +1,19 @@
-html,
+html {
+    background-color: #f8f9f1;
+    font-family: sans-serif;
+  }
+  
 body {
 	font-family: system-ui;
 	margin: 0;
 }
 
 body {
-	padding: 2rem;
+	margin: 0 auto;
+    width: 100%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.5;
 }
 
 .counter {
@@ -19,3 +27,54 @@ body {
 .counter-message {
 	text-align: center;
 }
+
+
+
+/* nav styles */
+
+.nav-links {
+	width: 100%;
+	top: 5rem;
+	left: 48px;
+	background-color: #ff9776;
+	display: none;
+	margin: 0;
+  }
+  
+  .nav-links a {
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+  }
+  
+  .nav-links a:hover, a:focus {
+	background-color: #ff9776;
+  }
+  
+  .expanded {
+	display: unset;
+  }
+  
+  @media screen and (min-width: 636px) {
+	.nav-links {
+	  margin-left: 5em;
+	  display: block;
+	  position: static;
+	  width: auto;
+	  background: none;
+	}
+  
+	.nav-links a {
+	  display: inline-block;
+	  padding: 15px 20px;
+	}
+  
+	.hamburger {
+	  display: none;
+	}
+  
+  }

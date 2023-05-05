@@ -1,7 +1,11 @@
 ---
 // Style Imports
 import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
+import BaseLayout from '../layouts/BaseLayout.astro'
+const pageTitle = 'Hello World'
 // Component Imports
 // For JSX components, all the common ways of exporting (under a namespace, specific export, default export etc) are supported!
 import * as react from '../components/ReactCounter'
@@ -15,34 +19,24 @@ import SvelteCounter from '../components/SvelteCounter.svelte'
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <main>
-      <react.Counter client:visible>
-        <h1>Hello from React!</h1>
-      </react.Counter>
+<BaseLayout pageTitle={pageTitle}>
+  <react.Counter client:visible>
+    <h1>Hello from React!</h1>
+  </react.Counter>
 
-      <PreactCounter client:visible>
-        <h1>Hello from Preact!</h1>
-      </PreactCounter>
+  <PreactCounter client:visible>
+    <h1>Hello from Preact!</h1>
+  </PreactCounter>
 
-      <SolidCounter client:visible>
-        <h1>Hello from Solid!</h1>
-      </SolidCounter>
+  <SolidCounter client:visible>
+    <h1>Hello from Solid!</h1>
+  </SolidCounter>
 
-      <VueCounter client:visible>
-        <h1>Hello from Vue!</h1>
-      </VueCounter>
+  <VueCounter client:visible>
+    <h1>Hello from Vue!</h1>
+  </VueCounter>
 
-      <SvelteCounter client:visible>
-        <h1>Hello from Svelte!</h1>
-      </SvelteCounter>
-    </main>
-  </body>
-</html>
+  <SvelteCounter client:visible>
+    <h1>Hello from Svelte!</h1>
+  </SvelteCounter>
+</BaseLayout>
